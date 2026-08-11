@@ -1,0 +1,7 @@
+<% currently_at "Questions" %>
+
+<% provide :page_title, "Edit answer" %>
+
+<h1>Edit answer</h1>
+
+<%= render partial: "form", locals: { question: @question, answer: @answer } %>
