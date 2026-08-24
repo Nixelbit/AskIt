@@ -22,7 +22,7 @@ gem "pagy", "~> 4.10"
 
 gem "draper", "~> 4.0"
 
-gem "valid_email2", "~> 4.0"
+gem "valid_email2", "~> 7.0"
 
 gem "rubyzip", "~> 2"
 
