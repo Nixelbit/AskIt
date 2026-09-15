@@ -17,10 +17,17 @@ ru:
         password: Пароль
         password_confirmation: Подтверждение пароля
         updated_at: Обновлён
+        role: Роль
     models:
       question: Вопрос
   admin:
     users:
+      edit:
+        title: Редактирование пользователя
+      destroy:
+        success: Пользователь удалён!
+      update:
+        success: Пользователь обновлён!
       create:
         success: Пользователи загружены!
       index:
@@ -46,6 +53,11 @@ ru:
       success: Ответ обновлён!
   en: Английский
   global:
+    user:
+      roles:
+        basic: Пользователь
+        moderator: Модератор
+        admin: Администратор
     button:
       delete: Удалить
       edit: Изменить
@@ -79,6 +91,7 @@ ru:
     index:
       new: Новый вопрос
       title: Вопросы
+      search_by_tags: Поиск по тегам
     new:
       title: Новый вопрос
     show:
