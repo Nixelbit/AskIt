@@ -28,6 +28,7 @@ gem "caxlsx_rails", "~> 0.6"
 gem "rubyXL", "~> 3.4"
 gem "activerecord-import", "~> 1.2"
 gem "rails-i18n"
+gem "pundit", "~> 2.1"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
