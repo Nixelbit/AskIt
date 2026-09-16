@@ -21,6 +21,7 @@
     "postcss": "^8.5.26",
     "postcss-cli": "^11.0.1",
     "sass": "^1.102.0",
+    "tom-select": "^2.6.2",
     "turbolinks": "^5.2.0"
   },
   "browserslist": [

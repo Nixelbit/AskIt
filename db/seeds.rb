@@ -4,4 +4,9 @@
 #   Question.create title: title, body: body
 # end
 
-User.find_each { |u| u.send(:set_gravatar_hash) ; u.save }
+# User.find_each { |u| u.send(:set_gravatar_hash) ; u.save }
+
+30.times do
+  title = Faker::Hipster.word
+  Tag.create title: title
+end
