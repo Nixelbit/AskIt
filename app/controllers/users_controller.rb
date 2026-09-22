@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       sign_in @user
-      flash[:success] = t(".success", current_user.name_or_email)
+      flash[:success] = t(".success", name: current_user.name_or_email)
       redirect_to root_path
     else
       render :new

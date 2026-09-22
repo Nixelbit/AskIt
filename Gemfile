@@ -72,4 +72,5 @@ group :development do
 
   gem "ruby-lsp", require: false
   gem "bullet"
+  gem "letter_opener"
 end

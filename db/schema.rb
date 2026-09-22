@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_13_143650) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_17_152055) do
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
     t.datetime "created_at", null: false
@@ -63,10 +63,13 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_13_143650) do
     t.string "gravatar_hash"
     t.string "name"
     t.string "password_digest"
+    t.string "password_reset_token"
+    t.datetime "password_reset_token_sent_at"
     t.string "remember_token_digest"
     t.integer "role", default: 0, null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["password_reset_token"], name: "index_users_on_password_reset_token"
     t.index ["role"], name: "index_users_on_role"
   end
 

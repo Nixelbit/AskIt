@@ -1,7 +1,10 @@
 class User < ApplicationRecord
+  include Recoverable
+  include Rememberable
+
   enum :role, { basic: 0, moderator: 1, admin: 2 }, suffix: :role
 
-  attr_accessor :old_password, :remember_token, :admin_edit
+  attr_accessor :old_password, :admin_edit
 
   has_secure_password validations: false
 
@@ -29,25 +32,10 @@ class User < ApplicationRecord
     obj.user == self
   end
 
-  def remember_me
-    self.remember_token = SecureRandom.urlsafe_base64
-    update_column :remember_token_digest, digest(remember_token)
-  end
-
-  def forget_me
-    update_column :remember_token_digest, nil
-    self.remember_token = nil
-  end
-
-  def remember_token_authenticated?(remember_token)
-    return false unless remember_token_digest.present?
-    BCrypt::Password.new(remember_token_digest).is_password?(remember_token)
-  end
-
   private
 
   def set_gravatar_hash
-    return unless email.present?
+    return unless email.blank?
 
     hash = Digest::MD5.hexdigest email.strip.downcase
     self.gravatar_hash = hash
@@ -75,6 +63,6 @@ class User < ApplicationRecord
   end
 
   def password_presence
-    errors.add(:password, :blank) unless password_digest.present?
+    errors.add(:password, :blank) if password_digest.blank?
   end
 end
