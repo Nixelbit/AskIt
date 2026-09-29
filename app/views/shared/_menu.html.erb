@@ -60,7 +60,7 @@
                   <li><hr class="dropdown-divider"></li>
 
                   <li><%= link_to t("menu.log_out"), session_path,
-                    class: "dropdown-item", data: {method: :delete} %></li>
+                    class: "dropdown-item", data: {turbo_method: :delete} %></li>
                 </ul>
             </li>
           <% else %>

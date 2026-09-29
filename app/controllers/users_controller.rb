@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       flash[:success] = t(".success")
       redirect_to edit_user_path(@user)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       flash[:success] = t(".success", name: current_user.name_or_email)
       redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
