@@ -20,7 +20,7 @@ gem "turbo-rails", "~> 1.0"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
-gem "pagy", "~> 4.10"
+gem "pagy", "~> 43.7"
 gem "draper", "~> 4.0"
 gem "valid_email2", "~> 4.0"
 gem "rubyzip", "~> 2"
